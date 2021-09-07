@@ -3,6 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <title>HyperText(HyperLink)</title>
+    <style> /* html 태그들은 컨텐츠의 의미와 구조를 표시, html 문서의 모양(디자인요소)은 style 여러 속성으로 설정 */
+        html{   /* html 태그에 적용되는 디자인 속성 */
+            margin: 0px; padding: 0px;
+        }
+        body{   /* body 태그에 적용되는 디자인 속성 */
+            margin: 0px; padding: 0px;
+        }
+    </style>
 </head>
 <body>
     <!-- 웹문서 사이의 연결(링크)는 a(anchor) 태그 -->
@@ -30,8 +38,12 @@
          다른 라인에 표시됩니다.
     -->
     <hr>
+    <!-- div 태그로 이미지가 다른 라인에 표시가 됩니다. -->
     <div><img src="../images/peach.jpg" width="30%"></div>
     <div><img src="../images/crown.jpg" width="30%"></div>
     <div><img src="../images/holl.jpg" width="30%"></div>
+    <!-- 이미지에 a태그 적용하기 -->
+    네이버로 이동하기 <a href="https://naver.com"><img src="../images/peach.jpg" width="30%"></a>
+
 </body>
 </html>
