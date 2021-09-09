@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>mytest #1</title>
+    <!-- 스크립트 script 태그 작성할 수 있는 위치 1 -->
+    <script>
+        function myFunction() {
+            document.getElementById("demo5").innerHTML = "바꼈어!"
+        }
+    </script>
+</head>
+<body>
+    <!-- 스크립트 script 태그 작성할 수 있는 위치 2 -->
+    <!-- 자바스크립트에서 사용하는 문서 객체 : document로 현재 보이는 웹문서의 요소들에 접근하다. 
+         자바스크립트에서 사용하는 브라우저 객체 : window로 현재 실행 중인 브라우저를 제어한다. -->
+
+
+    <!-- 스크립트는 html 이벤트(사건) 속성에 작성할 수 있습니다. -->
+    <!-- onclick 이벤트 속성 값 "" 안에 자바스크립트 명령을 작성합니다. (주의 : 따옴표 겹칠 때는 종류를 바꿔씁니다.) -->
+    <button onclick="document.getElementById('demo1').innerHTML=Date()">
+        현재 날짜와 시간을 알려줄게요!</button>
+        <!-- Date()는 함수입니다. -->
+    <p id="demo1">innerHTML 위치입니다.</p>
+
+    <p id="demo2">자바스크립트는 HTML element에서 스타일을 변경할 수 있어요!</p>
+    <button onclick="document.getElementById('demo2').style.fontSize='35px'">나를 눌러봐!!</button>
+
+    <p>자바 스크립트는 숨겨진 HTML element를 보여줘요!</p>
+
+    <p id="demo3" style="display: none;">안녕! 자바스크립트!</p>
+    <button onclick="document.getElementById('demo3').style.display='block'">나를 눌러봐!!</button>
+
+    <p id="demo4"></p>
+    <script>document.getElementById("demo4").innerHTML="나의 첫 자바스크립트"</script>
+
+    <h2>데모 자바스크립트</h2>
+    <p id="demo5">바뀌기 전</p>
+    <button onclick="myFunction()">시도해봐!</button>
+    <!-- body 안에 있을 때도 똑같이 작동한다. -->
+    <!-- <script>
+        function myFunction() {
+            document.getElementById("demo5").innerHTML = "바꼈어!"
+        }
+    </script> -->
+</body>
+</html>
