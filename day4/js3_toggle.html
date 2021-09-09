@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>자바스크립트로 이런 것도 해봅시다.</h2>
+    <p>HTML 태그의 속성값 변경하기 : img 태그의 이미지 파일명을 지정하는 src 속성값을 변경하는 예제입니다.</p>
+    <p>HTML 태그의 style값 변경하기 : em 태그의 텍스트 스타일 color값을 변경하는 예제입니다.</p>
+    <p>💡 전구를 클릭해보세요. 현재상태 : <em id="state" style="color: green;">ON</em></p>
+    <button onclick="bulbOn()">불을 켜주세요.</button>
+    <img src="../images/pic_bulbon.gif" alt="light" style="width: 100px; cursor: pointer;" id="myImage"
+                        onclick="bulbToggle()">
+    <button onclick="bulbOff()">불을 꺼주세요.</button>
+
+    <script>
+        let state=1;    // 전역변수 입니다. 1이면 on, 0이면 off
+        const img = document.getElementById('myImage');     // 태그 요소를 가져와 변수로 참조. const는 값의 변경을 안할 때 사용합니다.
+        const onoff = document.getElementById('state');
+        function bulbToggle() {
+            if(state==1){
+                bulbOff();
+                state=0;
+            } else {
+                bulbOn();
+                state=1;
+            }
+        }
+        function bulbOn(){
+            img.src='../images/pic_bulbon.gif';
+            onoff.style.color='green';
+            onoff.innerHTML='ON';
+        }
+
+        function bulbOff() {
+            img.src='../images/pic_bulboff.gif';
+            onoff.style.color='red';
+            onoff.innerHTML='OFF';
+        }
+    </script>
+</body>
+</html>
