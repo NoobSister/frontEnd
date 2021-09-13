@@ -29,5 +29,5 @@ document.write("y, z 동등 비교 : " + (z==y) + "<br>");  // 각각의 new 연
 document.write("y, z 일치 비교 : " + (z===y) + "<br>"); //                  위와 같음
 
 // 문자열 객체를 값으로 비교 : valueOf() 메소드로 문자열 자체로만 비교합니다.
-document.write(y.valueOf()==z.valueOf()); document.write('<br>');   // true
+document.write(y.valueOf()==z.valueOf()); document.write('<br>');   // *** true
 document.write(y.valueOf()===z.valueOf()); document.write('<br>');  // true
