@@ -12,7 +12,7 @@ document.write('문자열 추출 2 : ' + text.slice(7, 11));
 document.write('<br>');
 result = text.replace('javascript','jsp');  //대소문자구분해서 일치하는 것을 변환.
 
-let x = "John";     // string 타입
+let x = "John";     // string 타입 리터럴 'John'
 let y = new String("John");     // 객체 생성
 let z = new String("John");
 document.write(typeof x); document.write('<br>');
