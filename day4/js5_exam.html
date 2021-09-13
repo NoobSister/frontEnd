@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>자바스크립트 예제 #5</title>
+    <style>
+        table{
+            width: 80%;
+        }
+        td {
+            border: 1px solid tomato;
+            width: 40%;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h3>입력한 단어를 사용해 여러가지 효과를 확인해봅시다.</h3>
+    <table>
+        <tr>
+            <td>문자열 길이</td>
+            <td id="len"></td>
+        </tr>
+        <tr>
+            <td>찾고싶은 단어 위치 찾기<br>(단어가 2개 들어갈 시 마지막 위치)</td>
+            <td id="last"></td>
+        </tr>
+        <tr>
+            <td>문자열 추출 substring<br>(15번째 글자 포함 X)</td>
+            <td id="subs1"></td>
+        </tr>
+        <tr>
+            <td>문자열 추출 slice </td>
+            <td id="subs2"></td>
+        </tr>
+    </table>
+    <button onclick="text()" style="cursor: pointer;">단어 입력하기</button>
+    <button onclick="startNo()" style="cursor: pointer;">문자열 추출 start 입력</button>
+    <button onclick="endNo()" style="cursor: pointer;">문자열 추출 end 입력</button>
+    <button onclick="strMethod()">결과 보기</button>
+    <!-- 요구사항 : 버튼을 클릭하면 사용자로부터 문자열을 입력받습니다. (prompt 다이얼로그) 
+         입력받은 문자열로 String method 실행해서 table td 태그 안에 결과값 보여주기 
+    -->
+    <script src="ex5.js">
+        var text, want, no1, no2;
+
+
+        function text() {
+            text = prompt('문장를 입력해주십시오. 결과는 표에 나타납니다.');
+            want = prompt('입력한 문장 내에서 찾고싶은 단어를 적어주세요.')
+        }
+        function startNo() {
+            no1 = prompt('문자열 추출 시작 지점을 입력해주십시오.')
+        }
+        function endNo() {
+            no2 = prompt('문자열 추출 마지막 지점을 입력해주십시오.')
+        }
+        function strMethod() {
+            document.getElementById('len').innerHTML = text.length;
+            document.getElementById('last').innerHTML = text.lastIndexOf(want);
+            document.getElementById('subs1').innerHTML = text.substring(no1, no2);
+            document.getElementById('subs2').innerHTML = text.slice(no1, no2);
+        }
+        
+    </script>
+</body>
+</html>
