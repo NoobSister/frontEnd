@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 이터러블 Iterable 객체 : 여러개의 데이터를 저장하는 자료구조. -> 예로 배열
+                                for문을 이용해서 데이터를 순서대로 값을 접근(순회)
+                                foreach() 메소드는 for문을 대신하빈다. 인자로 함수를 전달합니다.
+            * if, for, while 문을 지양하는 프로그래밍 언어
+    
+    -->
+    <p id="demo"></p>
+    <p id="demo_each"></p>
+    <p id="filter"></p>
+    <p id="over10"></p>
+    <script>
+    const list = ['sana', 'mina', 'nana', 'nayeon'];
+
+    for(let i = 0; i < list.length; i++){
+        console.log(list[i]);
+    }
+    let result = '<ul>';
+    list.forEach(function(value, index, array){     // 콜백함수 인자는 자동으로 받게됩니다. valie, index, array
+        //result += "<li>" + value + "</li>";     
+        //result += "<li>" + index + "</li>";       // value 변수 대신 index 변수로 변경해서 실행
+        result += `<li>${index+1} : ${value}</li>`;
+    });  
+    result += '</ul>';
+    document.getElementById('demo_each').innerHTML = result;
+    // 결론 : 배열 객체는 유용한 메소드가 많습니다. 상당수 콜백함수를 인자로 사용합니다.
+    // filter 메소드는 조건이 참인 배열 요소만 찾아서 새로운 배열을 생성합니다.
+    const numbers = [45, 4, 9, 16, 25];
+    const over18 = numbers.filter(myFunction);
+
+    document.getElementById("filter").innerHTML = over18;
+
+    function myFunction(value) {
+        return value > 18;
+    }
+
+    // over10 배열을 filter 메소드로 생성해서 출력하세요. 단, 콜백함수를 arrow 함수로 작성해 보세요.
+    //const myfilter = (value) => value > 10;
+    //const over10 = numbers.filter(myfilter);
+    const over10 = [45, 4, 9, 16, 25].filter((value) => value > 10);
+    document.getElementById("over10").innerHTML = over10;
+    
+
+    const fruits = ["Banana", "Orange", "Apple", "Mango"];  // 배열
+    let fLen = fruits.length;       // 배열 요소의 개수
+
+    let text = "<ul>";  // 문자열 변수 text 초기화
+    for (let i = 0; i < fLen; i++){
+        text += "<li>" + fruits[i] + "</li>";    // text 에 문자열을 연결
+    }
+    text += "</ul>";    // ul종료 태그 추가
+    document.getElementById('demo').innerHTML = text;
+
+    </script>
+</body>
+</html>
